@@ -58,8 +58,8 @@ public final class korlibs/io/stream/AsyncBufferedInputStream : korlibs/io/strea
 }
 
 public abstract interface class korlibs/io/stream/AsyncGetLengthStream : korlibs/io/stream/AsyncBaseStream {
-	public abstract fun getLength (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun hasLength (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun getLength (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun hasLength (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class korlibs/io/stream/AsyncGetLengthStream$DefaultImpls {
@@ -68,7 +68,7 @@ public final class korlibs/io/stream/AsyncGetLengthStream$DefaultImpls {
 }
 
 public abstract interface class korlibs/io/stream/AsyncGetPositionStream : korlibs/io/stream/AsyncBaseStream {
-	public abstract fun getPosition (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun getPosition (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class korlibs/io/stream/AsyncGetPositionStream$DefaultImpls {
@@ -80,8 +80,9 @@ public abstract interface class korlibs/io/stream/AsyncInputOpenable {
 }
 
 public abstract interface class korlibs/io/stream/AsyncInputStream : korlibs/io/stream/AsyncBaseStream {
-	public abstract fun read (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun read (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun read ([BIILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun read$default (Lkorlibs/io/stream/AsyncInputStream;[BIILkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 }
 
 public final class korlibs/io/stream/AsyncInputStream$DefaultImpls {
@@ -176,7 +177,7 @@ public final class korlibs/io/stream/AsyncInputStream_readKt {
 }
 
 public abstract interface class korlibs/io/stream/AsyncLengthStream : korlibs/io/stream/AsyncGetLengthStream {
-	public abstract fun setLength (JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun setLength (JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class korlibs/io/stream/AsyncLengthStream$DefaultImpls {
@@ -186,8 +187,9 @@ public final class korlibs/io/stream/AsyncLengthStream$DefaultImpls {
 }
 
 public abstract interface class korlibs/io/stream/AsyncOutputStream : korlibs/io/stream/AsyncBaseStream {
-	public abstract fun write (ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun write (ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public abstract fun write ([BIILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun write$default (Lkorlibs/io/stream/AsyncOutputStream;[BIILkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 }
 
 public final class korlibs/io/stream/AsyncOutputStream$DefaultImpls {
@@ -239,9 +241,9 @@ public final class korlibs/io/stream/AsyncOutputStream_writeKt {
 }
 
 public abstract interface class korlibs/io/stream/AsyncPositionLengthStream : korlibs/io/stream/AsyncLengthStream, korlibs/io/stream/AsyncPositionStream {
-	public abstract fun eof (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun getAvailable (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public abstract fun hasAvailable (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun eof (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun getAvailable (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun hasAvailable (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class korlibs/io/stream/AsyncPositionLengthStream$DefaultImpls {
@@ -256,7 +258,7 @@ public final class korlibs/io/stream/AsyncPositionLengthStream$DefaultImpls {
 }
 
 public abstract interface class korlibs/io/stream/AsyncPositionStream : korlibs/io/stream/AsyncGetPositionStream {
-	public abstract fun setPosition (JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun setPosition (JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class korlibs/io/stream/AsyncPositionStream$DefaultImpls {
@@ -650,10 +652,11 @@ public final class korlibs/io/stream/SyncAsync_extKt {
 }
 
 public abstract interface class korlibs/io/stream/SyncInputStream : java/lang/AutoCloseable {
-	public abstract fun close ()V
-	public abstract fun read ()I
+	public fun close ()V
+	public fun read ()I
 	public abstract fun read ([BII)I
-	public abstract fun skip (I)V
+	public static synthetic fun read$default (Lkorlibs/io/stream/SyncInputStream;[BIIILjava/lang/Object;)I
+	public fun skip (I)V
 }
 
 public final class korlibs/io/stream/SyncInputStream$DefaultImpls {
@@ -730,10 +733,11 @@ public abstract interface class korlibs/io/stream/SyncLengthStream {
 }
 
 public abstract interface class korlibs/io/stream/SyncOutputStream : java/lang/AutoCloseable {
-	public abstract fun close ()V
-	public abstract fun flush ()V
-	public abstract fun write (I)V
+	public fun close ()V
+	public fun flush ()V
+	public fun write (I)V
 	public abstract fun write ([BII)V
+	public static synthetic fun write$default (Lkorlibs/io/stream/SyncOutputStream;[BIIILjava/lang/Object;)V
 }
 
 public final class korlibs/io/stream/SyncOutputStream$DefaultImpls {
@@ -796,7 +800,7 @@ public abstract interface class korlibs/io/stream/SyncRAInputStream {
 }
 
 public abstract interface class korlibs/io/stream/SyncRAOutputStream {
-	public abstract fun flush ()V
+	public fun flush ()V
 	public abstract fun write (J[BII)V
 }
 
